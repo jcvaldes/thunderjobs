@@ -41,11 +41,11 @@ app.use(
 
 // Middleware para manejar las solicitudes de la página principal
 app.get("/", function (req, res) {
-  res.sendFile(path.join(__dirname, "../client/web/index.html"));
+  res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 // Ruta para cargar la página vacantes.html
 app.get("/vacantes.html", function (req, res) {
-  res.sendFile(path.join(__dirname, "client", "web", "vacantes.html"));
+  res.sendFile(path.join(__dirname, "public",  "vacantes.html"));
 });
 
 // Middleware para enrutar las solicitudes a diferentes rutas de la API
