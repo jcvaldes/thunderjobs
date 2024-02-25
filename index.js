@@ -48,6 +48,14 @@ app.get("/vacantes.html", function (req, res) {
   res.sendFile(path.join(__dirname, "public",  "vacantes.html"));
 });
 
+app.get("/empresas.html", function (req, res) {
+  res.sendFile(path.join(__dirname, "public",  "empresas.html"));
+});
+
+app.get("/candidatos.html", function (req, res) {
+  res.sendFile(path.join(__dirname, "public",  "candidatos.html"));
+});
+
 // Middleware para enrutar las solicitudes a diferentes rutas de la API
 app.use("/api/empresas", routerEmpresas);
 app.use("/api/vacantes", routerVacantes);
