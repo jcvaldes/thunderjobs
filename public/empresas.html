@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ThunderJobs Empresa</title>
+        <link rel="stylesheet" href="/styles/empresas.css">
+        <link rel="shortcut icon" href="/images/icono.ico">
+    </head>
+<body>
+    <header>
+        <div id="divLogo" onclick="volverHome()"><img src="/images/logo2.svg" alt=""></div>
+        <h1>ThunderJobs Empresa</h1>
+    </header>
+    <section>
+
+        <div id="contenedor-form">
+            <div id="textoForm">
+                <h3>InfoJobs Empresa</h3>
+                <p>Encuentra a tu candidato de forma rápida, fácil y segura.</p>
+            </div>
+            <div id="divFormLogin">
+                <div id="divUsuario">
+                    <label for="inputUsuario">CIF</label>
+                    <input type="text" id="inputCif">
+                </div>
+                <div id="divPassword">
+                    <label for="inputPassword">Contraseña</label>
+                    <input type="password" id="inputPasswordE">
+                </div>
+                <input class="boton" type="button" onclick="loginEmpresa()" value="INICIA SESIÓN">
+                <div id="divRegistro">
+                    <h3>¿ERES NUEVO/A?</h3>
+                    <input class="boton" type="button" onclick="fModalRegistro()" value="Regístrate">
+                </div>
+                <div id="mensajeErrorLogin"></div>
+            </div>
+            <div id="divFormRegistro">
+
+                <label for="rInputCIF">C.I.F.</label>
+                <input type="text" id="rInputCifE">
+                <label for="rInputNombreE">Nombre</label>
+                <input type="text" id="rInputNombreE">
+                <label for="rInputEmailE">Email</label>
+                <input type="text" id="rInputEmailE">
+                <label for="rInputPasswordE">Contraseña</label>
+                <input type="text" id="rInputPasswordE">
+                <label for="rInputDescripcionE">Descripción</label>
+                <input type="text" id="rInputDescripcionE">
+                <label for="rInputImagenE">Imagen</label>
+                <input type="file" onchange="fInputImg()" enctype="multipart/form-data" id="rInputImagenE" name="archivo" accept="image/png, image/jpeg, image/jpg">
+                <input class="boton" type="button" onclick="registroEmpresas()" value="Registrarse">
+                <button id="botonAtras" onclick="volverAtras()">&#129044;</button>
+                <div id="mensajeErrorRegistro"></div>
+            </div>
+
+        </div>
+
+        <div id="divImg">
+            <img src="/images/imgEmpresa.png" alt="">
+        </div>
+
+        <div id="divInfo">
+            <h3>Encuentra al mejor profesional</h3>
+            <div id="container-info">
+                <div class="info">
+                    <img src="/images/icono1.png" alt="">
+                    <h4>Describe el puesto de trabajo</h4>
+                    <p>Detalla los requisitos que debe tener el candidato y publica tu oferta.</p>
+                </div>
+                <div class="info">
+                    <img src="/images/icono2.png" alt="">
+                    <h4>Describe el puesto de trabajo</h4>
+                    <p>Detalla los requisitos que debe tener el candidato y publica tu oferta.</p>
+                </div>
+                <div class="info">
+                    <img src="/images/icono3.png" alt="">
+                    <h4>Describe el puesto de trabajo</h4>
+                    <p>Detalla los requisitos que debe tener el candidato y publica tu oferta.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <footer><h3>&copy;2024 ThunderJobs</h3></footer>
+    <script src="/scripts/login.js"></script>
+    <script src="/scripts/index.js"></script>
+</body>
+</html>

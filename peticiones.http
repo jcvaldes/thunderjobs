@@ -1,0 +1,167 @@
+### GET para traer empresas
+GET http://localhost:3001/api/empresas
+
+### POST /login
+POST http://localhost:3001/api/usuarios/login
+Content-Type: application/json
+
+{
+  "username": "Tomasin",
+  "password": "1234"
+}
+
+### GET /perfil
+GET  http://localhost:3001/api/usuarios/perfil
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDIyYTVhZmJkMTFhNjRiMDVkNDg4MCIsImlhdCI6MTcwODI4MDA4OCwiZXhwIjoxNzA4MjgzNjg4fQ.EzB5fjlkCXGa_B94bNCDYLFp4NMVPV_dSza1XwxGhwA
+
+
+### POST /login empresa
+POST http://localhost:3001/api/empresas/login
+Content-Type: application/json
+
+{
+  "cif": "A000",
+  "password": "1234"
+}
+
+### GET /perfil empresa
+GET  http://localhost:3001/api/empresas/perfil
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDJhMDRmYjQyZTdiYTkwMWY4MTg5NyIsImlhdCI6MTcwODMwNDU5OX0.cTOWQ5rwtkXsu3nIWKKj5yIyA5lKitJTAqXIN9TmEbQ
+
+### GET para traer vacantes por vacante_id
+GET http://localhost:3001/api/vacantes/2
+
+
+### GET para traer solicitud por usuario_id
+GET http://localhost:3001/api/solicitudes/usuario/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDUwOTI4OTI3ZGY5ZjZhOGEyYWM2YSIsImlhdCI6MTcwODQ2NDEyMn0.zExnM9sg8wCN0Ds8CeZ4A_n-V--IT0sTbA-bwidVGyI
+
+### GET para traer solicitud por cif
+GET http://localhost:3001/api/solicitudes/empresa/A000
+
+### GET para traer vacante por cif
+GET http://localhost:3001/api/vacantes/empresa/A000
+
+### POST para crear solicitud
+POST http://localhost:3001/api/solicitudes/
+Content-Type: application/json
+
+{
+  "archivo": "archivo5.pdf",
+  "comentarios": "Necesito el trabajo",
+  "vacante": {
+        "titulo": "Médico General",
+        "descripcion": "Médico general para atención primaria.",
+        "requisitos": "Licenciatura en medicina y título homologado.",
+        "salario": 50000,
+        "estatus": "CREADA",
+        "destacado": 1,
+        "categoria": {
+            "categoria_id": 2,
+            "nombre": "Salud",
+            "descripcion": "Categoría relacionada con la salud"
+        },
+        "empresa": {
+            "cif": "Q0000",
+            "nombre": "QuirónSalud",
+            "email": "quiron@gmail.com",
+            "password": "1234",
+            "descripcion": "Empresa dedicada a la salud",
+            "imagen": "empresa1.jpg"
+        },
+        "vacante_id": 3,
+        "ubicacion": "pamplona"
+  },
+  "usuario":{
+        "usuario_id": 4,
+        "nombre": "Tomas",
+        "email": "usuario3@gmail.com",
+        "password": "1234",
+        "username": "Tomasin"
+  },
+  "estado": 0
+}
+
+### PATCH para modificar estado solicitud
+PATCH http://localhost:3001/api/solicitudes/estado/5
+Content-Type: application/json
+
+{
+  "nuevoEstado": 3
+}
+
+### PATCH para modificar estatus vacante
+PATCH http://localhost:3001/api/vacantes/4
+Content-Type: application/json
+
+
+### POST para crear registro
+POST http://localhost:3001/api/usuarios
+Content-Type: application/json
+
+{
+  "nombre": "Juan",
+  "email": "juan1@gmail.com",
+  "password": "1234",
+  "username":"Juan1"
+}
+
+### POST para crear registro
+POST http://localhost:3001/api/empresas
+Content-Type: application/json
+
+{
+  "cif": "Z000",
+  "nombre": "Zalando",
+  "email": "zalando@gmail.com",
+  "password": "1234",
+  "descripcion": "Empresa de ropa",
+  "imagen": "empresa1.jpg"
+}
+
+### POST para crear vacante
+POST http://localhost:3001/api/vacantes
+Content-Type: application/json
+
+{
+  "titulo": "Vacante ejemplo",
+  "descripcion": "Descripción vacante ejemplo",
+  "requisitos": "Requisitos vacante ejemplo",
+  "salario": 20000,
+  "categoria": "Tecnología",
+  "empresa": {
+    "cif":"A000",
+    "nombre": "Apple",
+    "email": "apple@gmail.com",
+    "descripcion": "Empresa dedicada a la tecnología",
+    "imagen": "empresa1.jpg"
+  },
+  "ubicacion": "madrid"
+}
+
+
+### POST para solicitud con pdf
+POST http://localhost:3001/api/solicitudes
+Content-Type: multipart/form-data
+
+archivo=@C:\Users\Joni\Desktop\documento.pdf
+comentarios=Estoy interesado en esta vacante
+vacante_id=1
+usuario_id=1
+
+
+### GET para descargar solicitud
+GET http://localhost:3001/api/solicitudes/descargar/5
+
+### PATCH para modificar la vacante
+PATCH http://localhost:3001/api/vacantes/modificar/3
+Content-Type: application/json
+
+{
+  "titulo": "Nuevo título de la vacante",
+  "descripcion": "Nueva descripción de la vacante",
+  "requisitos": "Nuevos requisitos de la vacante",
+  "categoria": "Tecnología",
+  "ubicacion": "madrid",
+  "salario": 10000
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Candidatos</title>
+        <link rel="stylesheet" href="/styles/candidatos.css">
+        <link rel="shortcut icon" href="/images/icono.ico">
+    </head>
+<body>
+    <header>
+        <div id="divLogo" onclick="volverHome()"><img src="/images/logo2.svg" alt=""></div>
+        <h1>ThunderJobs Candidatos</h1>
+    </header>
+    <section>
+  
+        <div id="divFormLogin">
+            <div id="tituloFormLogin">
+                <h2>ACCEDE COMO CANDIDATO</h2>
+            </div>
+            <div id="infoUsuario">
+                <div id="divUsuario">
+                    <label class="label" for="inputUsuario">Usuario</label>
+                    <input class="input" type="text" id="inputUsuario">
+                </div>
+                <div id="divPassword">
+                    <label class="label" for="inputPassword">Contraseña</label>
+                    <input class="input" type="password" id="inputPassword">
+                </div>
+                <input class="boton" onclick="loginUsuario()" type="button" value="INICIA SESIÓN">
+                <div id="divRegistro">
+                    <h3>¿ERES NUEVO/A?</h3>
+                    <input class="boton" type="button" onclick="fModalRegistro()" value="Regístrate">
+                </div>
+                <div id="mensajeErrorLogin">
+                    <h3 class="pMensajeError"></h3>
+                </div>
+            </div>
+
+        </div>
+        <div id="divFormRegistro">
+            <div id="tituloFormRegistro">
+                <h2>REGISTRO</h2>
+            </div>
+            <div id="divInfoRegistro">
+                <label class="label" for="rInputNombre">Nombre</label>
+                <input class="input" type="text" id="rInputNombre">
+                <label class="label" for="rInputUsuario">Nombre de usuario</label>
+                <input class="input" type="text" id="rInputUsuario">
+                <label class="label" for="rInputPassword">Contraseña</label>
+                <input class="input" type="text" id="rInputPassword">
+                <label class="label" for="rInputEmail">Email</label>
+                <input class="input" type="text" id="rInputEmail">
+                <div id="botonesRegistro">
+                    <input class="boton" type="button" onclick="registroUsuario()" value="Registrarse">
+                    <button id="botonAtras" onclick="volverAtras()">&#129044;</button>
+                </div>
+            </div>
+            <div id="mensajeErrorRegistro">
+                <h3 class="pMensajeError"></h3>
+            </div>
+        </div>
+        <div id="divImg">
+            <img src="/images/trabajadores.jpg" alt="">
+        </div> 
+
+    </section>
+    <footer>&copy;2024 ThunderJobs</footer>
+    <script src="/scripts/login.js"></script>
+    <script src="/scripts/index.js"></script>
+</body>
+</html>

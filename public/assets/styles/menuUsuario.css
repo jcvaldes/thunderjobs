@@ -1,0 +1,177 @@
+@font-face {
+    font-family: RobotoThin;
+    src: url(/fonts/Roboto-Thin.ttf);
+}
+@font-face {
+    font-family: OpenSansLight;
+    src: url(/fonts/OpenSans-Light.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: OpenSansLight;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el cuerpo ocupe al menos toda la altura de la ventana */
+    width: 100%;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 7rem;
+    background-color: #2c3e50;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid transparent;
+    /* Borde inferior transparente */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+    /* Sombra */
+}
+
+section {
+
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 5rem;
+    background-color: #2c3e50;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#divLogo{
+    display: flex;
+    width: 6%;
+    position: absolute;
+    top: 5%;
+    left: 3.5%;
+    transform: translate(-50%, -50%);
+}
+
+#divLogo img{
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+#divLogo img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+#divSolicitudes{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 90%;
+    width: 100%;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.divSolicitud{
+    display: flex;
+    width: 80%;
+    gap: 20px;
+}
+
+.divInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 90%;
+    color: #2c3e50;
+    border: 2px solid #6E8AD4;
+    padding-left:20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    gap: 10px;
+    border-radius: 7px;
+}
+
+.divInfo img{
+    width: 75px;
+}
+
+.divCancelar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#titulo{
+    color: #2c3e50;
+    font-size: 40px;
+}
+
+.divCancelar button, #divCerrarSesion button{
+    --c: #6E8AD4;
+    box-shadow: 0 0 0 .1em inset var(--c);
+    --_g: linear-gradient(var(--c) 0 0) no-repeat;
+    background:
+        var(--_g) calc(var(--_p, 0%) - 100%) 0%,
+        var(--_g) calc(200% - var(--_p, 0%)) 0%,
+        var(--_g) calc(var(--_p, 0%) - 100%) 100%,
+        var(--_g) calc(200% - var(--_p, 0%)) 100%;
+    background-size: 50.5% calc(var(--_p, 0%)/2 + .5%);
+    outline-offset: .1em;
+    transition: background-size .4s, background-position 0s .4s;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: .5em .8em;
+    border: none;
+    color: #2c3e50;
+    border-radius: 5px;
+}
+
+.divCancelar button:hover, #divCerrarSesion button:hover{
+    --_p: 100%;
+    transition: background-position .4s, background-size 0s;
+}
+
+#divCerrarSesion button{
+    color: white;
+}
+
+.estadoSolicitud{
+    width: fit-content;
+    background-color: red;
+    color: white;
+    padding: 5px 5px 5px 5px;
+}
+
+@media only screen and (min-width: 250px) and (max-width: 800px){
+    #divLogo{
+        width: 20%;
+        left: 15%;
+        top: 7%;
+    }
+    .divSolicitud{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

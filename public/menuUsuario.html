@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis solicitudes</title>
+    <link rel="stylesheet" href="/styles/menuUsuario.css">
+    <link rel="shortcut icon" href="/images/icono.ico">
+</head>
+<body onload="cargarSolicitudesFetch()">
+    <header>
+        <div id="divLogo" onclick="volverHome()"><img src="/images/logo2.svg" alt=""></div>
+        <div id="divCerrarSesion">
+            <button onclick="cerrarSesion()">Cerrar cesión</button>
+        </div>
+    </header>
+    <section>
+        <h3 id="titulo">Mis solicitudes</h3>
+        <div id="divSolicitudes">
+        </div>
+    </section>
+    <footer><h3>&copy;2024 ThunderJobs</h3></footer>
+    <script src="/scripts/menuUsuario.js"></script>
+    <script src="/scripts/index.js"></script>
+    <script></script>
+</body>
+</html>

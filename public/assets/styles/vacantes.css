@@ -1,0 +1,475 @@
+@font-face {
+    font-family: RobotoThin;
+    src: url(/fonts/Roboto-Thin.ttf);
+}
+@font-face {
+    font-family: MontserratLight;
+    src: url(/fonts/Montserrat-Light.ttf);
+}
+@font-face {
+    font-family: OpenSansLight;
+    src: url(/fonts/OpenSans-Light.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: OpenSansLight;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el cuerpo ocupe al menos toda la altura de la ventana */
+    width: 100%;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 7rem;
+    background-color: #2c3e50;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid transparent;
+    /* Borde inferior transparente */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+    /* Sombra */
+}
+
+section {
+
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 5rem;
+    background-color: #2c3e50;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#divLogin{
+    position: fixed;
+}
+#divLogo{
+    display: flex;
+    width: 6%;
+    position: absolute;
+    top: 5%;
+    left: 3.5%;
+    transform: translate(-50%, -50%);
+}
+
+#divLogo img{
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+#divLogo img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.boton {
+    --c: #6E8AD4;
+    /* the color*/
+
+    box-shadow: 0 0 0 .1em inset var(--c);
+    --_g: linear-gradient(var(--c) 0 0) no-repeat;
+    background:
+        var(--_g) calc(var(--_p, 0%) - 100%) 0%,
+        var(--_g) calc(200% - var(--_p, 0%)) 0%,
+        var(--_g) calc(var(--_p, 0%) - 100%) 100%,
+        var(--_g) calc(200% - var(--_p, 0%)) 100%;
+    background-size: 50.5% calc(var(--_p, 0%)/2 + .5%);
+    outline-offset: .1em;
+    transition: background-size .4s, background-position 0s .4s;
+}
+
+.boton:hover {
+    --_p: 100%;
+    transition: background-position .4s, background-size 0s;
+}
+
+.boton:active {
+    box-shadow: 0 0 9e9q inset #0009;
+    background-color: var(--c);
+    color: #fff;
+}
+
+.boton {
+    font-size: 1rem;
+    cursor: pointer;
+    padding: .5em .8em;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    height: 60px;
+    width: 250px;
+}
+
+/* Hasta aquí formato común */
+
+#divVacantes{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.vacante{
+    display: flex;
+    width: 80%;
+    /* height: 18vh; */
+    gap: 10px;
+    border: 2px solid #6E8AD4;
+    border-radius: 4px;
+    /* background-color: rgba(67, 94, 120, 0.775); */
+    color: #2c3e50;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    align-items: center;
+    overflow-y: auto;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.vacante:hover {
+    cursor: pointer;
+    background-color: rgba(91, 128, 162, 0.775);
+    transition: background-color 0.3s ease; /* Transición de 0.3 segundos con función de tiempo ease */
+}
+
+
+.cardInfo{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.containerInfo{
+    display: flex;
+    height: 80%;
+    flex-direction: column;
+    width: 80%;
+    justify-content: space-evenly;
+}
+
+#divBoton{
+    margin-top: 20px;
+}
+
+#divBoton button{
+    --c: #6E8AD4;
+    /* the color*/
+
+    box-shadow: 0 0 0 .1em inset var(--c);
+    --_g: linear-gradient(var(--c) 0 0) no-repeat;
+    background:
+        var(--_g) calc(var(--_p, 0%) - 100%) 0%,
+        var(--_g) calc(200% - var(--_p, 0%)) 0%,
+        var(--_g) calc(var(--_p, 0%) - 100%) 100%,
+        var(--_g) calc(200% - var(--_p, 0%)) 100%;
+    background-size: 50.5% calc(var(--_p, 0%)/2 + .5%);
+    outline-offset: .1em;
+    transition: background-size .4s, background-position 0s .4s;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: .5em .8em;
+    border: none;
+    color: rgba(67, 94, 120, 0.775);
+    border-radius: 5px;
+    height: 40px;
+    width: 150px;
+}
+
+#divBoton button:hover{
+    --_p: 100%;
+    transition: background-position .4s, background-size 0s;
+    cursor: pointer;
+}
+
+.containerInfo div{
+    width: 100%;
+}
+
+.containerImg{
+    height: 150px;
+}
+
+.containerImg img{
+    height: 100%;
+}
+
+.containerInfo p{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#divModal{
+    display: none;
+    flex-direction: column;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    padding-right: 30px;
+    border: 2px solid rgba(91, 128, 162, 0.775);
+    color: #2c3e50;
+    border-radius: 7px;
+    max-width: 90%;
+}
+
+#divModal img{
+    width: 10%;
+}
+
+#divCerrar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 95%;
+    width: 30px;
+    height: 30px;
+    top: 7%;
+    padding: 5px;
+}
+
+#divCerrar p{
+    font-size: bold;
+    font-size: 25px;
+}
+
+#divCerrar:hover{
+    cursor: pointer;
+    color: #415b75;
+}
+
+#divModalSolicitud{
+    display: none;
+    flex-direction: column;
+    border: 2px solid #6E8AD4;
+    padding: 30px 30px 30px 30px;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+}
+
+#divModalSolicitud button{
+    --c: #6E8AD4;
+    /* the color*/
+
+    box-shadow: 0 0 0 .1em inset var(--c);
+    --_g: linear-gradient(var(--c) 0 0) no-repeat;
+    background:
+        var(--_g) calc(var(--_p, 0%) - 100%) 0%,
+        var(--_g) calc(200% - var(--_p, 0%)) 0%,
+        var(--_g) calc(var(--_p, 0%) - 100%) 100%,
+        var(--_g) calc(200% - var(--_p, 0%)) 100%;
+    background-size: 50.5% calc(var(--_p, 0%)/2 + .5%);
+    outline-offset: .1em;
+    transition: background-size .4s, background-position 0s .4s;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: .5em .8em;
+    border: none;
+    color: rgba(67, 94, 120, 0.775);
+    border-radius: 5px;
+    height: 40px;
+    width: 150px;
+}
+
+#divModalSolicitud button:hover{
+    --_p: 100%;
+    transition: background-position .4s, background-size 0s; 
+}
+
+#divModalSolicitud input::placeholder {
+    color: white;
+}
+
+#divModalSolicitud input:focus{
+    outline: none;
+    border: 2px solid #6E8AD4;
+}
+
+#divModalSolicitud input{
+    appearance: none;
+    border: 0;
+    border-radius: 3px;
+    width: 100%;
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px;
+}
+
+#divComentarios{
+    width: 100%;
+}
+
+#divPaginacion{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 8vh;
+    gap: 10px;
+}
+
+#divPaginacion button{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    height: 4vh;
+    width: 4vh;
+    color: #fff;
+    background-color: rgba(67, 94, 120, 0.775);
+    border: 0px;
+    border-radius: 7px;
+    font-size: 100%;
+}
+
+#divPaginacion button:hover{
+    cursor: pointer;
+    background-color: #3d556e;
+}
+
+.botonPaginas{
+    border-radius: 20px !important;
+    background-color: #ffffff00 !important;
+    color: #2c3e50 !important;
+    font-size: 40px !important;
+}
+
+.botonPaginas:hover{
+    color: #3d556e !important;
+}
+
+/* Estilos para el estado "marcado" de los botones de paginación */
+.marcado {
+    background-color: #3d556e !important; /* Color de fondo cuando está marcado */
+ /* Color del texto cuando está marcado */
+}
+
+
+#botonAnterior{
+    transform: rotate(180deg);
+}
+
+#divEmpresa img{
+    display: flex;
+    gap: 25px;
+    width: 70px;
+    transition: transform 0.3s ease;
+}
+
+#divEmpresa img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+#divUsuario{
+    display: none;
+}
+
+#divUsuario img{
+    gap: 25px;
+    width: 70px;
+    transition: transform 0.3s ease;
+}
+
+#divUsuario img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+#modalMenuUsuario, #modalMenuEmpresa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+#modalMenuUsuario button, #modalMenuEmpresa button{
+    --c: #6E8AD4;
+    /* the color*/
+
+    box-shadow: 0 0 0 .1em inset var(--c);
+    --_g: linear-gradient(var(--c) 0 0) no-repeat;
+    background:
+        var(--_g) calc(var(--_p, 0%) - 100%) 0%,
+        var(--_g) calc(200% - var(--_p, 0%)) 0%,
+        var(--_g) calc(var(--_p, 0%) - 100%) 100%,
+        var(--_g) calc(200% - var(--_p, 0%)) 100%;
+    background-size: 50.5% calc(var(--_p, 0%)/2 + .5%);
+    outline-offset: .1em;
+    transition: background-size .4s, background-position 0s .4s;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: .5em .8em;
+    font-weight: bold;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    height: 40px;
+    width: 150px;
+}
+
+#modalMenuUsuario button:hover, #modalMenuEmpresa button:hover{
+    --_p: 100%;
+    transition: background-position .4s, background-size 0s;
+}
+
+.solicitud{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+@media only screen and (min-width: 250px) and (max-width: 800px){
+    header{
+        height: 15rem;
+    }
+    #divLogin{
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+    .boton{
+        height: fit-content;
+        width: 150px;
+    }
+    #divLogo{
+        width: 20%;
+        left: 15%;
+        top: 7%;
+    }
+    .vacante{
+        flex-direction: column;
+    }
+    #divModalSolicitud{
+        max-width: 90%;
+    }
+}

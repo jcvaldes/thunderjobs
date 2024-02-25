@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacantes</title>
+    <link rel="stylesheet" href="/styles/vacantes.css">
+    <link rel="shortcut icon" href="/images/icono.ico">
+</head>
+
+<body onload="cargarVacantes(1,5); comprobarToken()">
+
+    <header>
+        <div id="divUsuario" >
+            <img onclick="menuUsuario()" src="/images/usuario.png" alt="">
+            <div id="modalMenuUsuario">
+                <button onclick="menuSolicitudes()">Mis solicitudes</button>
+                <button onclick="cerrarSesion()">Cerrar cesión</button>
+            </div>
+        </div>
+        <div id="divLogo" onclick="volverHome()"><img src="/images/logo2.svg" alt=""></div>
+        <div id="divLogin">
+            <input class="boton" type="button" onclick="fAccederCandidatos()" value="Acceso candidatos">
+            <input class="boton" type="button" onclick="fAccederEmpresas()" value="Acceso empresas">
+        </div>
+        <div id="divEmpresa">
+            <img onclick="fModalMenuEmpresa()" src="/images/menu.svg" alt="">
+            <div id="modalMenuEmpresa">
+                <button onclick="menuEmpresa()">Menú empresa</button>
+                <button onclick="cerrarSesion()">Cerrar cesión</button>
+            </div>
+        </div>
+    </header>
+    <section id="section">
+        <div id="divVacantes"></div>
+        <div id="divPaginacion"></div>
+        <div id="divModal"></div>
+        <div id="divModalSolicitud"></div>
+    </section>
+    <footer>&copy;2024 ThunderJobs</footer>
+
+    <script src="/scripts/vacantes.js"></script>
+    <script src="/scripts/index.js"></script>
+    <script src="/scripts/login.js"></script>
+</body>
+
+</html>
+
+
+
+

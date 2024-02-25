@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Empresa</title>
+    <link rel="stylesheet" href="/styles/menuEmpresa.css">
+    <link rel="shortcut icon" href="/images/icono.ico">
+</head>
+<body onload="comprobarTokenEmpresa()">
+    
+    <header>
+        <div id="divLogo" onclick="volverHome()"><img src="/images/logo2.svg" alt=""></div>
+        <div id="divCerrarSesion">
+            <button onclick="cerrarSesion()">Cerrar cesión</button>
+        </div>
+    </header>
+    <section>
+        <div id="divTitulo">
+            <h3>MENÚ EMPRESA</h3>
+            <div id="divOpciones">
+                <div onclick="cambiarOpcion(0)" class="divOpcion">Publicar vacante</div>
+                <div onclick="cambiarOpcion(1); cargarSolicitudesEmpresa()" id="divMedio" class="divOpcion">Gestionar solicitudes</div>
+                <div onclick="cambiarOpcion(2); cargarVacantesEmpresa()" class="divOpcion">Gestionar mis vacantes</div>
+            </div>
+        </div>
+        <div id="divContenido">
+            <div id="divPublicar">
+                <div>
+                    <h3>Título del puesto</h3>
+                    <input type="text" id="inputTitulo">
+                </div>
+                <div>
+                    <h3>Descripción del puesto</h3>
+                    <input type="text" id="inputDescripcion">
+                </div>
+                <div>
+                    <h3>Categoría del puesto</h3>
+                    <div class="select">
+                        <select name="selectCategorias" id="selectCategorias">
+                            <option value="Tecnología">Tecnología</option>
+                            <option value="Educación">Educación</option>
+                            <option value="Salud">Salud</option>
+                            <option value="Alimentación">Alimentación</option>
+                            <option value="Marketing">Marketing</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div>
+                    <h3>Requisitos</h3>
+                    <textarea id="inputRequisitos" rows="4"></textarea>
+                </div>
+                <div>
+                    <h3>Ubicación</h3>
+                    <div class="select">
+                        <select name="selectUbicacion" id="selectUbicacion">
+                            <option value="madrid">Madrid</option>
+                            <option value="barcelona">Barcelona</option>
+                            <option value="pamplona">Pamplona</option>
+                            <option value="valencia">Valencia</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div>
+                    <h3>Salario</h3>
+                    <div id="divSalario">
+                        <input type="text" id="inputSalario">
+                        <h3>€ / Anuales</h3>
+                    </div>
+    
+                </div>
+                <div id="divDestacado">
+                    <h3>¿Quieres destacar tu vacante?</h3>
+                    <div class="select" id="divSelectDestacado">
+                        <select name="selectDestacado" id="selectDestacado">
+                            <option value="no">No</option>
+                            <option value="sí">Sí</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="boton" onclick="crearVacante()">Crear vacante</button>
+                <div id="divError">
+                    <p id="mensajeError"></p>
+                </div>
+            </div>
+            <div id="divGestionarSolicitudes"></div>
+            <div id="divGestionarVacantes"></div>
+            <div id="modalModificarVacantes">
+                <input id="nuevoTitulo" type="text" placeholder="Nuevo título">
+                <input id="nuevaDescripcion" type="text" placeholder="Nueva descripción">
+                <textarea name="" id="nuevosRequisitos" rows="4"></textarea>
+                <div id="divSalarioModificar">
+                    <input id="nuevoSalario" type="text" placeholder="Nuevo salario">
+                    <h3>€ / Anuales</h3>
+                </div>
+                <div class="select">
+                    <select id="nuevaCategoria" name="" id="">
+                        <option value="Tecnología">Tecnología</option>
+                        <option value="Educación">Educación</option>
+                        <option value="Salud">Salud</option>
+                        <option value="Alimentación">Alimentación</option>
+                        <option value="Marketing">Marketing</option>
+                    </select>
+                </div>
+                <div class="select">                 
+                    <select name="nuevaUbicacion" id="nuevaUbicacion">
+                        <option value="madrid">Madrid</option>
+                        <option value="barcelona">Barcelona</option>
+                        <option value="pamplona">Pamplona</option>
+                        <option value="valencia">Valencia</option>
+                    </select>
+                </div>
+                <div id="divDestacadoModificar">
+                    <p>¿Destacado?</p>
+                    <div class="select" id="divNuevoDestacado">
+                        <select name="nuevoDestacado" id="nuevoDestacado">
+                            <option value="no">No</option>
+                            <option value="sí">Sí</option>
+                        </select>
+                    </div>
+                </div>
+                <button id="botonModificarVacante" onclick="modificarVacante()">Modificar</button>
+                <button id="botonCancelar" onclick="cerrarModalModificar()">Cancelar</button>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>&copy;2024 ThunderJobs</footer>
+
+    <script src="/scripts/menuEmpresa.js"></script>
+    <script src="/scripts/index.js"></script>
+    <script src="/scripts/login.js"></script>
+</body>
+</html>
